@@ -16,6 +16,8 @@ git clone https://github.com/ap-nas/xfce-simple-conky/
 
 Then:
 chmod +x start.sh
+
+
 ./start.sh 
 
 Then set the start.sh script to autostart using the Session and startup manager.
