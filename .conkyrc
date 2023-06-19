@@ -41,17 +41,15 @@ conky.text = [[
 ${voffset 15}${color grey}${font Monospace:bold:size=12}${time %A, %d %B %Y}
 ${voffset 5}${color grey}${font Monospace:bold:size=20}${time %H:%M:%S}
 ${voffset 15}${color grey}${font Monospace:bold:size=12}${exec whoami}@${nodename}
-${voffset 25}${color grey}${font Monospace:bold:size=11}CPU
-${voffset 5}${color grey}${font Monospace:size=10}${cpu cpu0}% ${cpubar cpu0}
-${voffset 15}${color grey}${font Monospace:bold:size=11}RAM
-${voffset 5}${color grey}${font Monospace:size=10}${memperc}% ${membar}
-${voffset 15}${color grey}${font Monospace:bold:size=11}Storage
-${voffset 5}${color grey}${font Monospace:size=10}${fs_used_perc /}% ${fs_bar /}
+${voffset 25}${color grey}${font Monospace:bold:size=11}CPU || ${cpu cpu0}% 
+${voffset 5}${color grey}${font Monospace:size=10}${cpubar cpu0}
+${voffset 15}${color grey}${font Monospace:bold:size=11}RAM || ${memperc}% 
+${voffset 5}${color grey}${font Monospace:size=10}${membar}
+${voffset 15}${color grey}${font Monospace:bold:size=11}SSD || ${fs_used_perc /}% 
+${voffset 5}${color grey}${font Monospace:size=10}${fs_bar /}
 ${voffset 15}${color grey}${font Monospace:bold:size=10}Network
 ${voffset 5}${color grey}${font Monospace:size=8}${if_existing /proc/net/route wlp3s0}${wireless_essid wlp3s0}${else}N/A${endif}
 ${voffset 15}${color grey}${font Monospace:bold:size=10}IP Addresses
-${voffset 5}${color grey}${font Monospace:size=8}Private IP: ${exec ip addr show wlp3s0 | grep -w inet | awk '{print $2}' | cut -d'/' -f1}
+${voffset 5}${color grey}${font Monospace:size=8}Local IP: ${exec ip addr show wlp3s0 | grep -w inet | awk '{print $2}' | cut -d'/' -f1}
 ${voffset 5}${color grey}${font Monospace:size=8}Public IP : ${exec wget -qO- http://ipecho.net/plain ; echo}
 ]];
-
-
