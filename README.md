@@ -1,6 +1,9 @@
 # xfce-simple-conky
 A very simple and clean conky
 All you got to do is create a .conky folder in your home directory:
+
+
+
 mkdir ~/.conky/
 cd  ~/.conky/
 
